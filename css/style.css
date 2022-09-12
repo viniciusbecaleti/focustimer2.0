@@ -1,0 +1,81 @@
+:root {
+  font-size: 6.25%;
+  --text-color: #323238;
+  --button-bg: #E1E1E6;
+  --selected-button-bg: #02799D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16rem;
+  font-weight: 500;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 821rem;
+  margin: 0 auto;
+}
+
+.timer__display {
+  display: flex;
+  font-size: 126rem;
+  color: var(--text-color);
+  margin-bottom: 16rem;
+}
+
+.timer__controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer__button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32rem;
+}
+
+.sounds__item {
+  padding: 48rem 42rem;
+  border: none;
+  border-radius: 24rem;
+  background: var(--button-bg);
+  cursor: pointer;
+}
+
+.sounds__item.selected {
+  background: var(--selected-button-bg);
+}
+
+.sounds__item.selected path {
+  fill: white;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 48rem;
+  }
+}
