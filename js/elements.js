@@ -9,6 +9,8 @@ const forestSoundButton = document.querySelector('[data-sound="forest"]')
 const rainSoundButton = document.querySelector('[data-sound="rain"]')
 const coffeeShopSoundButton = document.querySelector('[data-sound="coffee-shop"]')
 const fireplaceSoundButton = document.querySelector('[data-sound="fireplace"]')
+const lightButton = document.querySelector('[data-button="light"]')
+const darkButton = document.querySelector('[data-button="dark"]')
 
 export {
   playButton,
@@ -21,5 +23,7 @@ export {
   forestSoundButton,
   rainSoundButton,
   coffeeShopSoundButton,
-  fireplaceSoundButton
+  fireplaceSoundButton,
+  lightButton,
+  darkButton
 }

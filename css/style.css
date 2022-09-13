@@ -3,6 +3,8 @@
   --text-color: #323238;
   --button-bg: #E1E1E6;
   --selected-button-bg: #02799D;
+  --body-bg: white;
+  --button-color: #323238;
 }
 
 * {
@@ -12,22 +14,32 @@
 }
 
 body {
+  display: grid;
+  min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   font-size: 16rem;
   font-weight: 500;
+  padding: 60rem 0;
+  background: var(--body-bg);
 }
 
 .hidden {
   display: none;
 }
 
-.container {
-  display: grid;
-  width: 100%;
-  min-height: 100vh;
+.mode {
+  justify-self: end;
+  margin-right: 10%;
+}
+
+.mode__button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .content {
+  justify-self: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,11 +80,6 @@ body {
   cursor: pointer;
 }
 
-.sounds__item,
-.sounds__item path {
-  transition: .3s;
-}
-
 .sounds__item.playing {
   background: var(--selected-button-bg);
 }
@@ -82,6 +89,14 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding: 30rem 0;
+  }
+
+  .mode {
+    margin-bottom: 30rem;
+  }
+
   .content {
     flex-direction: column;
     justify-content: center;

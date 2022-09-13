@@ -1,6 +1,7 @@
 import Controls from './controls.js'
 import Timer from './timer.js'
 import Sounds from './sounds.js'
+import Mode from './mode.js'
 import {
   playButton,
   pauseButton,
@@ -12,11 +13,18 @@ import {
   forestSoundButton,
   rainSoundButton,
   coffeeShopSoundButton,
-  fireplaceSoundButton
+  fireplaceSoundButton,
+  lightButton,
+  darkButton
 } from './elements.js'
 import Mixer from './mixer.js'
 
 const sounds = Sounds()
+
+const mode = Mode({
+  lightButton,
+  darkButton
+})
 
 const mixer = Mixer({
   forestSoundButton,
@@ -83,4 +91,12 @@ coffeeShopSoundButton.addEventListener('click', () => {
 
 fireplaceSoundButton.addEventListener('click', () => {
   mixer.fireplace()
+})
+
+lightButton.addEventListener('click', () => {
+  mode.darkMode()
+})
+
+darkButton.addEventListener('click', () => {
+  mode.lightMode()
 })
