@@ -17,6 +17,10 @@ body {
   font-weight: 500;
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   display: grid;
   width: 100%;
@@ -64,11 +68,16 @@ body {
   cursor: pointer;
 }
 
-.sounds__item.selected {
+.sounds__item,
+.sounds__item path {
+  transition: .3s;
+}
+
+.sounds__item.playing {
   background: var(--selected-button-bg);
 }
 
-.sounds__item.selected path {
+.sounds__item.playing path {
   fill: white;
 }
 
