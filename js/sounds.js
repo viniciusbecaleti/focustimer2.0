@@ -6,6 +6,11 @@ export default function Sounds() {
   const fireplace = new Audio('../sounds/lareira.wav')
   const alarm = new Audio('../sounds/alarme.mp3')
 
+  coffeeShop.loop = true
+  rain.loop = true
+  forest.loop = true
+  fireplace.loop = true
+
   return {
     button,
     coffeeShop,
