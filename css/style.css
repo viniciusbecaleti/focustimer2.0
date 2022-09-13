@@ -7,6 +7,14 @@
   --button-color: #323238;
 }
 
+body.dark {
+  --text-color: white;
+  --button-bg: #29292E;
+  --selected-button-bg: #0A3442;
+  --body-bg: #121214;
+  --button-color: #C4C4CC;
+}
+
 * {
   margin: 0;
   padding: 0;
