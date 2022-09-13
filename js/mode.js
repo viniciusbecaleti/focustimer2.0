@@ -14,7 +14,7 @@ export default function Mode({
   }
 
   function lightMode() {
-    document.documentElement.style.setProperty("--text-color", "323238")
+    document.documentElement.style.setProperty("--text-color", "#323238")
     document.documentElement.style.setProperty("--button-bg", "#E1E1E6")
     document.documentElement.style.setProperty("--selected-button-bg", "#02799D")
     document.documentElement.style.setProperty("--body-bg", "white")
