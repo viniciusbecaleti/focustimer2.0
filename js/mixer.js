@@ -6,15 +6,34 @@ export default function Mixer({
   forestSound,
   rainSound,
   coffeeShopSound,
-  fireplaceSound
+  fireplaceSound,
+  forestSoundVolume,
+  rainSoundVolume,
+  coffeeShopSoundVolume,
+  fireplaceSoundVolume
 }) {
-  function playOrPause(sound) {
+  function play(sound, element) {
     if (!sound.paused) {
       sound.pause()
+      element.value = 0
       return
     }
 
     sound.play()
+    volume(sound, 0.5, element)
+  }
+
+  function stop(sound, element) {
+    sound.pause()
+    element.value = 0
+  }
+
+  function volume(sound, value, element) {
+    if (element) {
+      element.value = value
+    }
+
+    sound.volume = value
   }
 
   function forest() {
@@ -23,11 +42,11 @@ export default function Mixer({
     coffeeShopSoundButton.classList.remove('playing')
     fireplaceSoundButton.classList.remove('playing')
 
-    rainSound.pause()
-    coffeeShopSound.pause()
-    fireplaceSound.pause()
-
-    playOrPause(forestSound)
+    stop(rainSound, rainSoundVolume)
+    stop(coffeeShopSound, coffeeShopSoundVolume)
+    stop(fireplaceSound, fireplaceSoundVolume)
+    
+    play(forestSound, forestSoundVolume)
   }
 
   function rain() {
@@ -36,11 +55,11 @@ export default function Mixer({
     coffeeShopSoundButton.classList.remove('playing')
     fireplaceSoundButton.classList.remove('playing')
 
-    forestSound.pause()
-    coffeeShopSound.pause()
-    fireplaceSound.pause()
+    stop(forestSound, forestSoundVolume)
+    stop(coffeeShopSound, coffeeShopSoundVolume)
+    stop(fireplaceSound, fireplaceSoundVolume)
 
-    playOrPause(rainSound)
+    play(rainSound, rainSoundVolume)
   }
 
   function coffeeShop() {
@@ -49,11 +68,11 @@ export default function Mixer({
     forestSoundButton.classList.remove('playing')
     fireplaceSoundButton.classList.remove('playing')
 
-    forestSound.pause()
-    rainSound.pause()
-    fireplaceSound.pause()
+    stop(forestSound, forestSoundVolume)
+    stop(rainSound, rainSoundVolume)
+    stop(fireplaceSound, fireplaceSoundVolume)
 
-    playOrPause(coffeeShopSound)
+    play(coffeeShopSound, coffeeShopSoundVolume)
   }
 
   function fireplace() {
@@ -62,12 +81,36 @@ export default function Mixer({
     rainSoundButton.classList.remove('playing')
     forestSoundButton.classList.remove('playing')
 
-    forestSound.pause()
-    rainSound.pause()
-    coffeeShopSound.pause()
+    stop(forestSound, forestSoundVolume)
+    stop(rainSound, rainSoundVolume)
+    stop(coffeeShopSound, coffeeShopSoundVolume)
 
-    playOrPause(fireplaceSound)
+    play(fireplaceSound, fireplaceSoundVolume)
   }
+
+  forestSoundVolume.addEventListener('change', () => {
+    let element = forestSoundVolume
+    let value = +element.value
+    volume(forestSound, value, element)
+  })
+
+  rainSoundVolume.addEventListener('change', () => {
+    let element = rainSoundVolume
+    let value = +element.value
+    volume(rainSound, value, element)
+  })
+
+  coffeeShopSoundVolume.addEventListener('change', () => {
+    let element = coffeeShopSoundVolume
+    let value = +element.value
+    volume(coffeeShopSound, value, element)
+  })
+
+  fireplaceSoundVolume.addEventListener('change', () => {
+    let element = fireplaceSoundVolume
+    let value = +element.value
+    volume(fireplaceSound, value, element)
+  })
 
   return {
     forest,

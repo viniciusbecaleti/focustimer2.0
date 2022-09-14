@@ -15,7 +15,11 @@ import {
   coffeeShopSoundButton,
   fireplaceSoundButton,
   lightButton,
-  darkButton
+  darkButton,
+  forestSoundVolume,
+  rainSoundVolume,
+  coffeeShopSoundVolume,
+  fireplaceSoundVolume
 } from './elements.js'
 import Mixer from './mixer.js'
 
@@ -35,6 +39,10 @@ const mixer = Mixer({
   rainSound: sounds.rain,
   coffeeShopSound: sounds.coffeeShop,
   fireplaceSound: sounds.fireplace,
+  forestSoundVolume,
+  rainSoundVolume,
+  coffeeShopSoundVolume,
+  fireplaceSoundVolume
 })
 
 const controls = Controls({
@@ -77,20 +85,28 @@ decreaseButton.addEventListener('click', () => {
   sounds.button.play()
 })
 
-forestSoundButton.addEventListener('click', () => {
-  mixer.forest()
+forestSoundButton.addEventListener('click', (event) => {
+  if (event.target == forestSoundButton) {
+    mixer.forest()
+  }
 })
 
-rainSoundButton.addEventListener('click', () => {
-  mixer.rain()
+rainSoundButton.addEventListener('click', (event) => {
+  if (event.target == rainSoundButton) {
+    mixer.rain()
+  }
 })
 
-coffeeShopSoundButton.addEventListener('click', () => {
-  mixer.coffeeShop()
+coffeeShopSoundButton.addEventListener('click', (event) => {
+  if (event.target == coffeeShopSoundButton) {
+    mixer.coffeeShop()
+  }
 })
 
-fireplaceSoundButton.addEventListener('click', () => {
-  mixer.fireplace()
+fireplaceSoundButton.addEventListener('click', (event) => {
+  if (event.target == fireplaceSoundButton) {
+    mixer.fireplace()
+  }
 })
 
 lightButton.addEventListener('click', () => {

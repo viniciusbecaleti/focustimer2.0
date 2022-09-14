@@ -11,6 +11,10 @@ const coffeeShopSoundButton = document.querySelector('[data-sound="coffee-shop"]
 const fireplaceSoundButton = document.querySelector('[data-sound="fireplace"]')
 const lightButton = document.querySelector('[data-button="light"]')
 const darkButton = document.querySelector('[data-button="dark"]')
+const forestSoundVolume = document.querySelector('[data-volume="forest"]')
+const rainSoundVolume = document.querySelector('[data-volume="rain"]')
+const coffeeShopSoundVolume = document.querySelector('[data-volume="coffee-shop"]')
+const fireplaceSoundVolume = document.querySelector('[data-volume="fireplace"]')
 
 export {
   playButton,
@@ -25,5 +29,9 @@ export {
   coffeeShopSoundButton,
   fireplaceSoundButton,
   lightButton,
-  darkButton
+  darkButton,
+  forestSoundVolume,
+  rainSoundVolume,
+  coffeeShopSoundVolume,
+  fireplaceSoundVolume
 }
