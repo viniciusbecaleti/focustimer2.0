@@ -31,6 +31,7 @@ body {
   font-weight: 500;
   padding: 60rem 0;
   background: var(--body-bg);
+  transition: background 0.3s;
 }
 
 .hidden {
@@ -91,6 +92,7 @@ body {
   border: none;
   border-radius: 24rem;
   background: var(--button-bg);
+  transition: background 0.3s;
   cursor: pointer;
 }
 
